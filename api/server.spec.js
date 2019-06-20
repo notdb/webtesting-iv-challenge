@@ -18,4 +18,13 @@ describe("server", () => {
         .expect(200);
     });
   });
+
+  describe("post /something", () => {
+    let name = { name: "jenny" };
+    it("adds a user to body", () => {
+      return supertest(server)
+        .post("/something", name)
+        .expect(201);
+    });
+  });
 });
