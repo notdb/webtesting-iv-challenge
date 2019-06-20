@@ -27,4 +27,13 @@ describe("server", () => {
         .expect(201);
     });
   });
+
+  describe("delete /something", () => {
+    let number = 4;
+    it("deletes fourth user from something", () => {
+      return supertest(server)
+        .delete("/something/4")
+        .expect(204);
+    });
+  });
 });

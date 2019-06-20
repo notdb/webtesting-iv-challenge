@@ -20,4 +20,11 @@ server.post("/something", (req, res) => {
   res.status(201).json(newName);
 });
 
+server.delete("/something/:id", (req, res) => {
+  let id = req.params.id;
+  let newArray = something.splice(id, 1);
+
+  res.status(204).end();
+});
+
 module.exports = server;
